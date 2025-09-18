@@ -628,9 +628,10 @@ body::after {
 @media (max-width: 768px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 2rem;
-        letter-spacing: 2px;
+        font-size: 1.8rem;
+        letter-spacing: 1px;
         top: 15px;
+        white-space: nowrap; /* 改行を防ぐ */
     }
     
     /* コンテナの調整 */
@@ -656,7 +657,7 @@ body::after {
         min-height: auto; /* 最小高さを自動に */
         max-height: none;
         padding: 15px;
-        overflow-y: visible; /* スクロールを無効にして全体を表示 */
+        overflow: hidden; /* スクロールを完全に無効化 */
     }
     
     /* カレンダーエリアの調整 */
@@ -763,5 +764,91 @@ body::after {
         width: 24px;
         height: 24px;
         font-size: 0.8rem;
+    }
+}
+
+/* より小さなスマホ画面（480px以下）での調整 */
+@media (max-width: 480px) {
+    /* 背景タイトルの調整 */
+    body::before {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+        top: 10px;
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    /* コンテナの調整 */
+    .container {
+        margin-top: 80px; /* タイトルとの間に十分なスペースを確保 */
+        padding-bottom: 20px;
+    }
+    
+    /* BGMエリアとカレンダーエリアの調整 */
+    .content,
+    .sidebar {
+        width: 98%;
+        padding: 10px;
+        overflow: hidden; /* スクロールを完全に無効化 */
+    }
+    
+    /* タイトルの調整 */
+    .title {
+        font-size: 1.2rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    /* 気分ボタンの調整 */
+    .mood-button {
+        padding: 8px 12px;
+        font-size: 0.6rem;
+    }
+    
+    /* BGMを決めるボタンの調整 */
+    .fortune-button {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+        min-width: 150px;
+    }
+    
+    /* カレンダータイトルの調整 */
+    .calendar-title {
+        font-size: 0.7rem;
+        margin-bottom: 8px;
+    }
+    
+    /* カレンダーの調整 */
+    .calendar {
+        padding: 8px;
+    }
+    
+    .month-year {
+        font-size: 0.8rem;
+    }
+    
+    /* カレンダーの日付セルの調整 */
+    .day {
+        padding: 2px 0;
+        font-size: 0.7rem;
+        line-height: 1rem;
+        min-height: 25px;
+    }
+    
+    .day-name {
+        font-size: 0.6rem;
+        margin-bottom: 2px;
+        min-height: 18px;
+    }
+    
+    /* 入浴完了ボタンの調整 */
+    .complete-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.7rem;
+    }
+    
+    /* 前月・次月ボタンの調整 */
+    #prev-month, #next-month {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7rem;
     }
 }
