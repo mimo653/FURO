@@ -41,6 +41,7 @@ body::before {
     letter-spacing: 3px;
     font-family: 'Press Start 2P', cursive;
     text-align: center;
+    white-space: nowrap; /* 改行を防ぐ */
     z-index: 5; /* 他の要素より前面に */
     pointer-events: none; /* クリックイベントを無効化 */
 }
@@ -146,7 +147,7 @@ body::after {
     position: relative;
     z-index: 10;
     text-align: center;
-    overflow: hidden; /* スクロールを完全に無効化 */
+    overflow: hidden !important; /* スクロールを完全に無効化 */
     transform: none;
     image-rendering: pixelated;
 }
@@ -628,8 +629,8 @@ body::after {
 @media (max-width: 768px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 1.8rem;
-        letter-spacing: 1px;
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
         top: 15px;
         white-space: nowrap; /* 改行を防ぐ */
     }
@@ -653,11 +654,13 @@ body::after {
     .content {
         width: 95%;
         max-width: none;
-        height: auto;
-        min-height: auto; /* 最小高さを自動に */
-        max-height: none;
+        height: auto !important;
+        min-height: auto !important; /* 最小高さを自動に */
+        max-height: none !important; /* 最大高さを無効化 */
         padding: 15px;
-        overflow: hidden; /* スクロールを完全に無効化 */
+        overflow: hidden !important; /* スクロールを完全に無効化 */
+        overflow-x: hidden !important; /* 横スクロールも無効化 */
+        overflow-y: hidden !important; /* 縦スクロールも無効化 */
     }
     
     /* カレンダーエリアの調整 */
@@ -771,8 +774,8 @@ body::after {
 @media (max-width: 480px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 1.2rem;
-        letter-spacing: 0.5px;
+        font-size: 1rem;
+        letter-spacing: 0.2px;
         top: 10px;
         white-space: nowrap; /* 改行を防ぐ */
     }
@@ -788,7 +791,9 @@ body::after {
     .sidebar {
         width: 98%;
         padding: 10px;
-        overflow: hidden; /* スクロールを完全に無効化 */
+        overflow: hidden !important; /* スクロールを完全に無効化 */
+        overflow-x: hidden !important; /* 横スクロールも無効化 */
+        overflow-y: hidden !important; /* 縦スクロールも無効化 */
     }
     
     /* タイトルの調整 */
@@ -850,5 +855,51 @@ body::after {
         width: 20px;
         height: 20px;
         font-size: 0.7rem;
+    }
+}
+
+/* 非常に小さなスマホ画面（360px以下）での調整 */
+@media (max-width: 360px) {
+    /* 背景タイトルの調整 */
+    body::before {
+        font-size: 0.9rem;
+        letter-spacing: 0.1px;
+        top: 8px;
+        white-space: nowrap; /* 改行を防ぐ */
+    }
+    
+    /* コンテナの調整 */
+    .container {
+        margin-top: 70px;
+        padding-bottom: 15px;
+    }
+    
+    /* BGMエリアとカレンダーエリアの調整 */
+    .content,
+    .sidebar {
+        width: 99%;
+        padding: 8px;
+        overflow: hidden !important; /* スクロールを完全に無効化 */
+        overflow-x: hidden !important; /* 横スクロールも無効化 */
+        overflow-y: hidden !important; /* 縦スクロールも無効化 */
+    }
+    
+    /* タイトルの調整 */
+    .title {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    /* 気分ボタンの調整 */
+    .mood-button {
+        padding: 6px 10px;
+        font-size: 0.5rem;
+    }
+    
+    /* BGMを決めるボタンの調整 */
+    .fortune-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        min-width: 120px;
     }
 }
