@@ -629,8 +629,8 @@ body::after {
 @media (max-width: 768px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 1.5rem;
-        letter-spacing: 0.5px;
+        font-size: 2rem;
+        letter-spacing: 1px;
         top: 15px;
         white-space: nowrap; /* 改行を防ぐ */
     }
@@ -774,8 +774,8 @@ body::after {
 @media (max-width: 480px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 1rem;
-        letter-spacing: 0.2px;
+        font-size: 1.4rem;
+        letter-spacing: 0.5px;
         top: 10px;
         white-space: nowrap; /* 改行を防ぐ */
     }
@@ -862,8 +862,8 @@ body::after {
 @media (max-width: 360px) {
     /* 背景タイトルの調整 */
     body::before {
-        font-size: 0.9rem;
-        letter-spacing: 0.1px;
+        font-size: 1.1rem;
+        letter-spacing: 0.3px;
         top: 8px;
         white-space: nowrap; /* 改行を防ぐ */
     }
